@@ -1,7 +1,7 @@
 To Do:
 --Controlado o modelo? de ganadores *
 --Funcion generadora de ganadores random *
---Incluir fechas de inicio y final a la funcion de ganadores
+--Incluir fechas de inicio y final a la funcion de ganadores*
 --Emplear paperclip para upload de foto de evidencia
 
 Check:

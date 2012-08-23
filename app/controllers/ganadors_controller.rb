@@ -39,9 +39,35 @@ class GanadorsController < ApplicationController
   # POST /ganadors
   # POST /ganadors.json
   def create
+    anio_inicio=params[:anio_inicio]
+    mes_inicio=params[:mes_inicio]
+    if mes_inicio.size==1
+      mes_inicio="0"+mes_inicio
+    end
+    dia_inicio=params[:dia_inicio]
+    if dia_inicio.size==1
+      dia_inicio="0"+dia_inicio
+    end
+
+    anio_final=params[:anio_final]
+    mes_final=params[:mes_final]
+    if mes_final.size==1
+      mes_final="0"+mes_final
+    end
+    dia_final=params[:dia_final]
+    if dia_final.size==1
+      dia_final="0"+dia_final
+    end
+
+    str=" created_at BETWEEN '" + anio_inicio + "-" + mes_inicio + "-" + dia_inicio + "' and '" + anio_final + "-" + mes_final + "-" + dia_final + "'"
+
 		if Ganador.count < Participant.count 
 	    participant = nil
-			array = Participant.all
+			array = Participant.where(str)
+			if array.count == 0
+				redirect_to ganadors_path, notice: 'No hay participantes disponibles en las fechas escogidas.'
+				return
+			end
 			offset = array.count
   	  begin
   	    participant = array[rand(offset)]
