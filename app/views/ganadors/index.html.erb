@@ -1,0 +1,24 @@
+<h1>Listing ganadors</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ganadors.each do |ganador| %>
+  <tr>
+    <% @g = ganador.getGanadorData %>
+    <td><%= @g.nombre %></td>
+    <td><%= link_to 'Show', ganador %></td>
+    <td><%= link_to 'Edit', edit_ganador_path(ganador) %></td>
+    <td><%= link_to 'Destroy', ganador, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ganador', new_ganador_path %>

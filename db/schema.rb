@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823061319) do
+ActiveRecord::Schema.define(:version => 20120823192516) do
+
+  create_table "ganadors", :force => true do |t|
+    t.integer  "id_participante"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "participants", :force => true do |t|
     t.string   "nombre"
@@ -19,8 +25,9 @@ ActiveRecord::Schema.define(:version => 20120823061319) do
     t.string   "edad"
     t.string   "producto"
     t.string   "codigo"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.boolean  "ganador_flag"
   end
 
   create_table "users", :force => true do |t|

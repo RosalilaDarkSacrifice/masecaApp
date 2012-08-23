@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<% @g = @ganador.getGanadorData %>
+<p>
+  <b>Nombre:</b>
+  <%= @g.nombre %>
+</p>
+
+<p>
+  <b>Identidad:</b>
+  <%= @g.identidad %>
+</p>
+
+<p>
+  <b>Edad:</b>
+  <%= @g.edad %>
+</p>
+
+<p>
+  <b>Tipo de producto:</b>
+  <%= @g.producto %>
+</p>
+
+<p>
+  <b>Codigo de producto:</b>
+  <%= @g.codigo %>
+</p>
+<%= link_to 'Back', ganadors_path %>

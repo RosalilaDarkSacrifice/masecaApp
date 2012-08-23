@@ -42,7 +42,7 @@ class ParticipantsController < ApplicationController
   # POST /participants.json
   def create
     @participant = Participant.new(params[:participant])
-
+    @participant.ganador_flag = false
     respond_to do |format|
       if @participant.save
         format.html { redirect_to root_url , notice: 'Participant was successfully created.' }
