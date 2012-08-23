@@ -45,7 +45,7 @@ class ParticipantsController < ApplicationController
     @participant.ganador_flag = false
     respond_to do |format|
       if @participant.save
-        format.html { redirect_to root_url , notice: 'Participant was successfully created.' }
+        format.html { redirect_to participants_path, notice: 'Participant was successfully created.' }
         format.json { render json: @participant, status: :created, location: @participant }
       else
         format.html { render action: "new" }
@@ -74,10 +74,14 @@ class ParticipantsController < ApplicationController
   # DELETE /participants/1.json
   def destroy
     @participant = Participant.find(params[:id])
+		if @participant.ganador_flag
+			@ganador = Ganador.find_by_id_participante(@participant.id)
+			@ganador.destroy
+		end
     @participant.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_url }
+      format.html { redirect_to participants_path }
       format.json { head :no_content }
     end
   end

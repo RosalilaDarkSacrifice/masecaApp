@@ -41,7 +41,7 @@ class GanadorsController < ApplicationController
   def create
     participant = nil
     begin
-      participant = Participant.first(:offset => rand(Participant.count))
+      participant = Participant.offset(rand(Participant.count)).first
     end while participant.ganador_flag
 
 		participant.ganador_flag = true
