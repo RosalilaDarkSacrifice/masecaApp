@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120822225033) do
+ActiveRecord::Schema.define(:version => 20120823061319) do
 
   create_table "participants", :force => true do |t|
     t.string   "nombre"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(:version => 20120822225033) do
     t.string   "codigo"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end

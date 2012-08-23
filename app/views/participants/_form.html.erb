@@ -24,8 +24,8 @@
     <%= f.text_field :edad %>
   </div>
   <div class="field">
-    <%= f.label :producto %><br />
-    <%= f.text_field :producto %>
+    <%= f.label :producto, "Presentacion de Producto" %><br />
+    <%= f.select :producto, {"1" => "1", "2" => "2", "3" => "3"} %>
   </div>
   <div class="field">
     <%= f.label :codigo %><br />
