@@ -39,24 +39,30 @@ class GanadorsController < ApplicationController
   # POST /ganadors
   # POST /ganadors.json
   def create
-    participant = nil
-    begin
-      participant = Participant.offset(rand(Participant.count)).first
-    end while participant.ganador_flag
+		if Ganador.count < Participant.count 
+	    participant = nil
+			array = Participant.all
+			offset = array.count
+  	  begin
+  	    participant = array[rand(offset)]
+  	  end while participant.ganador_flag
 
-		participant.ganador_flag = true
-    participant.save
-    @ganador = Ganador.new
-    @ganador.id_participante = participant.id
-
-    respond_to do |format|
-      if @ganador.save
-        format.html { redirect_to @ganador, notice: 'Ganador was successfully created.' }
-        format.json { render json: @ganador, status: :created, location: @ganador }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @ganador.errors, status: :unprocessable_entity }
-      end
+			participant.ganador_flag = true
+  	  participant.save
+  	  @ganador = Ganador.new
+  	  @ganador.id_participante = participant.id
+		
+    	respond_to do |format|
+    	  if @ganador.save
+    	    format.html { redirect_to @ganador, notice: 'Ganador was successfully created.' }
+    	    format.json { render json: @ganador, status: :created, location: @ganador }
+    	  else
+    	    format.html { render action: "new" }
+    	    format.json { render json: @ganador.errors, status: :unprocessable_entity }
+    	  end
+    	end
+		else
+			redirect_to ganadors_path, notice: 'No es posible escoger mas ganadores.'
     end
   end
 

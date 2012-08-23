@@ -4,11 +4,6 @@ class ParticipantsController < ApplicationController
   # GET /participants.json
   def index
     @participants = Participant.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @participants }
-    end
   end
 
   # GET /participants/1
