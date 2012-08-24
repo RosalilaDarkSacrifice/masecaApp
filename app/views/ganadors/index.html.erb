@@ -1,14 +1,19 @@
 <h1>Listing ganadors</h1>
+<%= render 'nav' %>
+
+<% if @current_user %>
+	<%= render 'form' %>
+<% end %>
 
 <% @ganadors.each do |ganador| %>
   <% @g = ganador.getGanadorData %>
   <div>
     <p><b>Nombre:</b><%= @g.nombre %></p>
-    <span><%= link_to 'Show', ganador %></span>|
-    <span><%= link_to 'Edit', edit_ganador_path(ganador) %></span>
-    <span><%= link_to 'Destroy', ganador, confirm: 'Are you sure?', method: :delete %></span>
+    <span><%= link_to 'Show', ganador %></span>
+    <% if @current_user %>
+    	<span>|<%= link_to 'Edit', edit_ganador_path(ganador) %></span>
+    	<span>|<%= link_to 'Destroy', ganador, confirm: 'Are you sure?', method: :delete %></span>
+		<% end %>
   </div>
 <% end %>
 <br />
-
-<%= link_to 'New Ganador', new_ganador_path %>

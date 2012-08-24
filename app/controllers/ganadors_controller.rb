@@ -96,16 +96,20 @@ class GanadorsController < ApplicationController
   # PUT /ganadors/1.json
   def update
     @ganador = Ganador.find(params[:id])
-
-    respond_to do |format|
-      if @ganador.update_attributes(params[:ganador])
-        format.html { redirect_to @ganador, notice: 'Ganador was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @ganador.errors, status: :unprocessable_entity }
-      end
-    end
+		if @ganador
+			@ganador.foto = params[:foto]
+	    respond_to do |format|
+      	if @ganador.save
+      	  format.html { redirect_to @ganador, notice: 'Ganador was successfully updated.' }
+      	  format.json { head :no_content }
+      	else
+      	  format.html { render action: "edit" }
+      	  format.json { render json: @ganador.errors, status: :unprocessable_entity }
+      	end
+    	end
+		else
+			redirect_to ganadors_path, notice: 'Tal ganador no existe.'
+		end
   end
 
   # DELETE /ganadors/1

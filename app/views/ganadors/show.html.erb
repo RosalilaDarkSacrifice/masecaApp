@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <% @g = @ganador.getGanadorData %>
 <p>
   <b>Nombre:</b>
@@ -24,4 +23,10 @@
   <b>Codigo de producto:</b>
   <%= @g.codigo %>
 </p>
+
+<% if @ganador.foto_file_name != nil %>
+<p>
+  <%= image_tag @ganador.foto.url %>
+</p>
+<% end %>
 <%= link_to 'Back', ganadors_path %>
