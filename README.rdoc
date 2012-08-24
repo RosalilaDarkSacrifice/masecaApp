@@ -6,7 +6,6 @@ To Do:
 --Emplear paperclip para upload de foto de evidencia *
 
 Check:
---La configuario del mailer de users para el reset password no esta completa dado que
-  es necesario que nos den info de un correo para asociarlo con el mailer
---Que deberia pasar cuando se elimina un ganador? Se puede eliminar un ganador?
---Alguna resolucion deseada de la foto?
+  La configuario del mailer de users para el reset password no esta completa dado que es necesario que nos den info de un correo para asociarlo con el mailer
+  Que deberia pasar cuando se elimina un ganador? Se puede eliminar un ganador?
+  Alguna resolucion deseada de la foto?
