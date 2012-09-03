@@ -1,9 +1,16 @@
-<h1>Reset Password</h1>
-
-<%= form_tag password_resets_path, :method => :post do %>
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div class="actions"><%= submit_tag "Reset Password" %></div>
-<% end %>
+<table width="100%" border="0" align="center">
+  <tr>
+    <td align="center">&nbsp;</td>
+    <td align="center" width="533" height="402" background="<%=asset_path("restablecercontraseniap.png")%>" style="background-repeat:no-repeat;text-align:center">
+			<br />
+			<%= form_tag password_resets_path, :method => :post do %>
+			  <div class="field">
+			    <%= label_tag :email %><br/>
+			    <%= text_field_tag :email, params[:email] %>
+			  </div>
+			  <div class="actions"><%= submit_tag "Restablecer contraseña" %></div>
+			<% end %>
+    </td>
+    <td align="center">&nbsp;</td>
+  </tr>
+</table>

@@ -1,1 +1,4 @@
-<%= render 'form' %>
+<% @current_user = current_user %>
+<% if @current_user %>
+  <%= render 'form' %>
+<%end%>

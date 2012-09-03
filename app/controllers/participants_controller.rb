@@ -80,4 +80,9 @@ class ParticipantsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def new2
+    @participant = Participant.new
+		render "new2"
+  end
 end
