@@ -123,4 +123,11 @@ class GanadorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def ganadores
+    render "ganadores"
+  end
+  def legal
+    render "legal"
+  end
 end

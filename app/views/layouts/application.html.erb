@@ -6,11 +6,12 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="background-image:url(<%= asset_path("backgroundganadores.jpg")%>);background-repeat:repeat">
+
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash#{name}" %>
   <% end %>
-<%= yield %>
 
+<%= yield %>
 </body>
 </html>
