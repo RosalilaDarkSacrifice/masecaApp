@@ -1,22 +1,29 @@
-<h1>Listing participants</h1>
-<%= link_to 'New Participant', new_participant_path %>
+<table width="100%" border="0" align="center" style="position:absolute;top:30%;">
+  <tr>
+    <td align="right"></td>
+    <td align="center" background="<%=asset_path("PixelBlanco.png")%>" style="background-repeat:repeat;text-align:left">
+			<%= link_to 'Back', new_participant_path %>
+			<% @current_user = current_user %>
+			<% @participants.each do |participant| %>
+			<div>
+				<p><b>Nombre:</b><%= participant.nombre %></p>
 
-<% @participants.each do |participant| %>
-<div>
-	<p><b>Nombre:</b><%= participant.nombre %></p>
+				<p><b>Identidad:</b><%= participant.identidad %></p>
 
-	<p><b>Identidad:</b><%= participant.identidad %></p>
+				<p><b>Edad:</b><%= participant.edad %></p>
 
-	<p><b>Edad:</b><%= participant.edad %></p>
+				<p><b>Producto:</b><%= participant.producto %></p>
 
-	<p><b>Producto:</b><%= participant.producto %></p>
+				<p><b>Codigo:</b><%= participant.codigo %></p>
 
-	<p><b>Codigo:</b><%= participant.codigo %></p>
-
-  <span><%= link_to 'Show', participant %></span> |
-	<span><%= link_to 'Edit', edit_participant_path(participant) %></span>|
-  <span><%= link_to 'Destroy', participant, confirm: 'Are you sure?', method: :delete %></span>
-</div>
-<% end %>
-
-<br />
+				<span><%= link_to 'Show', participant %></span> |
+				<% if @current_user %>
+					<span><%= link_to 'Edit', edit_participant_path(participant) %></span>|
+					<span><%= link_to 'Destroy', participant, confirm: 'Are you sure?', method: :delete %></span>
+				<% end %>
+			</div>
+			<% end %>
+    </td>
+    <td align="center">&nbsp;</td>
+  </tr>
+</table>

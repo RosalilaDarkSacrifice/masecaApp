@@ -1,3 +1,6 @@
 <h1>New ganador</h1>
-
-<%= link_to 'Back', ganadors_path %>
+<% @current_user = current_user %>
+<% if @current_user %>
+	<%= render 'form' %>
+<% end %>
+<%= link_to 'Back', new_participant_path %>

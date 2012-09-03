@@ -1,11 +1,10 @@
-<table width="100%" border="0" align="center" style="position:absolute;top:5%;">
+<table width="100%" border="0" align="center" style="position:absolute;top:30%;">
   <tr>
-    <td align="right" width="272" height="277"><img src="<%=asset_path("logoclienteleft.png")%>" alt="sfg" /></td>
+    <td align="right" width="272" height="277"></td>
     <td align="center" width="502" height="761" background="<%=asset_path("clienteingreso.png")%>" style="background-repeat:no-repeat">
 <br/>
 <br/>
 <br/>
-<span style="position:relative;left:-90px"><%= link_to 'Back', ganadores_path %></span>
 <%= form_for(@participant) do |f| %>
   <% if @participant.errors.any? %>
     <div id="error_explanation">
