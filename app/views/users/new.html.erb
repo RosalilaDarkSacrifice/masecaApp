@@ -1,5 +1,24 @@
-<h1>Sign Up</h1>
-<%= link_to 'Back', new_participant_path %>
+	<table width="100%" border="0" align="center" style="position:absolute;top:5%;">
+  	<tr>
+  	  <td align="right">&nbsp;</td>
+  	  <td align="center">
+			  <img width="908" height="185" src="<%=asset_path("MenuCrearAdmin.png")%>"
+         usemap="#Map"/>
+			</td>
+  	  <td align="center">&nbsp;</td>
+  	</tr>
+  </table>
+
+<table width="100%" border="0" align="center" style="position:absolute;top:50%;">
+  <tr>
+    <td align="right"></td>
+    <td align="center" width="579" height="386" background="<%=asset_path("crearadmin.png")%>" style="text-align:center">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -20,8 +39,20 @@
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation %><br/>
     <%= f.password_field :password_confirmation %>
   </p>
   <p class="button"><%= f.submit %></p>
 <% end %>
+</div>
+			</td>
+  	  <td align="center">&nbsp;</td>
+  	</tr>
+  </table>
+<map name="Map" id="Map">
+  <area shape="rect" coords="158,26,294,89" href="<%=new_participant_path%>" alt="Ingresar Participante" />
+  <area shape="rect" coords="297,26,431,89" href="<%=ganadors_path%>" alt="Listado de Ganadores" />
+  <area shape="rect" coords="433,28,585,89" href="<%=participants_path%>" alt="Listado de Participantes" />
+  <area shape="rect" coords="588,27,709,91" href="<%=new_ganador_path%>" alt="Generar Ganadores" />
+  <area shape="rect" coords="712,27,880,90" href="<%=new_user_path%>" alt="Crear Administradores" />
+</map>
