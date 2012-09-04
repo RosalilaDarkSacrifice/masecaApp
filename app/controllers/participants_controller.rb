@@ -1,9 +1,8 @@
-
 class ParticipantsController < ApplicationController
   # GET /participants
   # GET /participants.json
   def index
-    @participants = Participant.all
+    @participants = Participant.order('created_at DESC').all
   end
 
   # GET /participants/1
@@ -40,7 +39,7 @@ class ParticipantsController < ApplicationController
     @participant.ganador_flag = false
     respond_to do |format|
       if @participant.save
-        format.html { redirect_to participants_path, notice: 'Participant was successfully created.' }
+        format.html { redirect_to new_participant_path, notice: 'Participante creado.' }
         format.json { render json: @participant, status: :created, location: @participant }
       else
         format.html { render action: "new" }
@@ -56,7 +55,7 @@ class ParticipantsController < ApplicationController
 
     respond_to do |format|
       if @participant.update_attributes(params[:participant])
-        format.html { redirect_to @participant, notice: 'Participant was successfully updated.' }
+        format.html { redirect_to @participant, notice: 'Participante actualizado.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -84,5 +83,19 @@ class ParticipantsController < ApplicationController
   def new2
     @participant = Participant.new
 		render "new2"
+  end
+
+  def create2
+    @participant = Participant.new(params[:participant])
+    @participant.ganador_flag = false
+    respond_to do |format|
+      if @participant.save
+        format.html { redirect_to root_url, notice: 'Datos ingresados, gracias por participar.' }
+        format.json { render json: @participant, status: :created, location: @participant }
+      else
+        format.html { render action: "new2" }
+        format.json { render json: @participant.errors, status: :unprocessable_entity }
+      end
+    end
   end
 end

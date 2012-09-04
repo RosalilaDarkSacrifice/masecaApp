@@ -2,7 +2,7 @@ class GanadorsController < ApplicationController
   # GET /ganadors
   # GET /ganadors.json
   def index
-    @ganadors = Ganador.all
+    @ganadors = Ganador.order('created_at DESC').all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,7 +80,7 @@ class GanadorsController < ApplicationController
 		
     	respond_to do |format|
     	  if @ganador.save
-    	    format.html { redirect_to @ganador, notice: 'Ganador was successfully created.' }
+    	    format.html { redirect_to @ganador, notice: 'Ganador elegido.' }
     	    format.json { render json: @ganador, status: :created, location: @ganador }
     	  else
     	    format.html { render action: "new" }
@@ -100,7 +100,7 @@ class GanadorsController < ApplicationController
 			@ganador.foto = params[:foto]
 	    respond_to do |format|
       	if @ganador.save
-      	  format.html { redirect_to @ganador, notice: 'Ganador was successfully updated.' }
+      	  format.html { redirect_to @ganador, notice: 'Ganador actualizado.' }
       	  format.json { head :no_content }
       	else
       	  format.html { render action: "edit" }

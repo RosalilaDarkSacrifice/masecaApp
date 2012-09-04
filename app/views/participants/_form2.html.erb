@@ -5,8 +5,8 @@
 <br/>
 <br/>
 <br/>
-<span style="position:relative;left:-90px"><%= link_to 'Back', ganadores_path %></span>
-<%= form_for(@participant) do |f| %>
+<span style="position:relative;left:-90px"><%= link_to 'Back', root_url %></span>
+<%= form_for(@participant, :url => cliente_create_path) do |f| %>
   <% if @participant.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@participant.errors.count, "error") %> prohibited this participant from being saved:</h2>

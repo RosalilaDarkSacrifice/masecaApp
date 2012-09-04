@@ -1,29 +1,29 @@
-	<table width="100%" border="0" align="center" style="position:absolute;top:5%;">
-  	<tr>
-  	  <td align="right">&nbsp;</td>
-  	  <td align="center">
-			  <img width="908" height="185" src="<%=asset_path("MenuListadoGanadores.png")%>"
-         usemap="#Map"/>
-			</td>
-  	  <td align="center">&nbsp;</td>
-  	</tr>
-  </table>
+<% @current_user = current_user %>
+<% if @current_user %>
+<%= link_to "Log out", log_out_path %>	
+<table width="100%" border="0" align="center" style="position:absolute;top:5%;">
+ 	<tr>
+ 	  <td align="right">&nbsp;</td>
+ 	  <td align="center">
+		  <img width="908" height="185" src="<%=asset_path("MenuListadoGanadores.png")%>"
+        usemap="#Map"/>
+		</td>
+ 	  <td align="center">&nbsp;</td>
+ 	</tr>
+</table>
 
 <table width="100%" border="0" align="center" style="position:absolute;top:50%;">
   <tr>
     <td align="right"></td>
     <td align="center" background="<%=asset_path("PixelBlanco.png")%>" style="background-repeat:repeat;text-align:left">
-		<%= render 'nav' %>
     <%= link_to 'Back', new_participant_path %>
 		<% @ganadors.each do |ganador| %>
   		<% @g = ganador.getGanadorData %>
   		<div>
     		<p><b>Nombre:</b><%= @g.nombre %></p>
     		<span><%= link_to 'Show', ganador %></span>
-    		<% if @current_user %>
     			<span>|<%= link_to 'Edit', edit_ganador_path(ganador) %></span>
     			<span>|<%= link_to 'Destroy', ganador, confirm: 'Are you sure?', method: :delete %></span>
-				<% end %>
   		</div>
 		<% end %>
     </td>
@@ -37,3 +37,4 @@
   <area shape="rect" coords="588,27,709,91" href="<%=new_ganador_path%>" alt="Generar Ganadores" />
   <area shape="rect" coords="712,27,880,90" href="<%=new_user_path%>" alt="Crear Administradores" />
 </map>
+<% end %>

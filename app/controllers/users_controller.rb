@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to root_url, :notice => "Signed up!"
+      redirect_to new_participant_path, :notice => "Registrado con exito!"
     else
       render "new"
     end

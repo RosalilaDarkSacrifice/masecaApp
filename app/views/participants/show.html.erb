@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<% @current_user = current_user %>
+<% if @current_user %>
+<%= link_to 'Back', participants_path %>
 <p>
   <b>Nombre:</b>
   <%= @participant.nombre %>
@@ -24,7 +25,4 @@
   <b>Codigo:</b>
   <%= @participant.codigo %>
 </p>
-
-
-<%= link_to 'Edit', edit_participant_path(@participant) %> |
-<%= link_to 'Back', participants_path %>
+<% end %>

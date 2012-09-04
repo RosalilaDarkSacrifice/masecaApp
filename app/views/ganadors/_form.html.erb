@@ -2,17 +2,16 @@
   <tr>
     <td align="right"></td>
     <td align="center" width="579" height="386" background="<%=asset_path("generarganadoresadmin.png")%>" style="text-align:center">
+<br/>
+<br/>
+<div align="center">
 <%= form_tag ganadors_path do %>
 <table>
   <tr>
     <td>
       <b>Fecha de inicio:</b>
     </td>
-<br/>
-<br/>
-<br/>
     <td>
-      <!--<%= select( "anio_inicio", params[:anio_inicio],["2010","2011","2012","2013","2014","2015","2016"]) %>-->
       <select name="anio_inicio">
         <option value="<%= Time.now.year %>"><%= Time.now.year %></option>
         <option value="2011">2011</option>
@@ -79,7 +78,6 @@
       <b>Fecha final:</b>
     </td>
     <td>
-      <!--<%= select( "anio_final", params[:anio_inicio],["2010","2011","2012","2013","2014","2015","2016"]) %>-->
       <select name="anio_final">
         <option value="<%= Time.now.year %>"><%= Time.now.year %></option>
         <option value="2011">2011</option>
@@ -103,8 +101,7 @@
         <option value="11">Noviembre</option>
         <option value="12">Diciembre</option>
       </select>
-      <!--<%= select( "dia_final", params[:dia_inicio],["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"])
-%>-->
+
       <select name="dia_final">
         <option value="<%= Time.now.day %>"><%= Time.now.day %></option>
         <option value="01">01</option>
@@ -146,6 +143,7 @@
    <%= submit_tag "Elegir ganador"%>
   </div>
 <% end %>
+</div>
     </td>
     <td align="center">&nbsp;</td>
   </tr>

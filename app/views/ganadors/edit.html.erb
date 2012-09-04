@@ -1,5 +1,8 @@
-<h1>Editing ganador</h1>
-
+<% @current_user = current_user %>
+<% if @current_user %>
+<%= link_to 'Show', @ganador %> |
+<%= link_to 'Back', ganadors_path %> 
+<p>
 <%= form_for @ganador, :url => ganador_path(params[:id]), :html => { :multipart => true } do |f| %>
 	<div class="field">
 		<%= label_tag :foto %>
@@ -7,6 +10,5 @@
 	</div>
 	<div class="actions"><%= submit_tag "Subir foto" %></div>
 <% end %>
-
-<%= link_to 'Show', @ganador %> |
-<%= link_to 'Back', ganadors_path %>
+</p>
+<% end %>
