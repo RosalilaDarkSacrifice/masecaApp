@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120824171528) do
+ActiveRecord::Schema.define(:version => 20120906044122) do
 
   create_table "ganadors", :force => true do |t|
     t.integer  "id_participante"
@@ -26,12 +26,12 @@ ActiveRecord::Schema.define(:version => 20120824171528) do
   create_table "participants", :force => true do |t|
     t.string   "nombre"
     t.string   "identidad"
-    t.string   "edad"
     t.string   "producto"
     t.string   "codigo"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.boolean  "ganador_flag"
+    t.string   "ciudad"
   end
 
   create_table "users", :force => true do |t|

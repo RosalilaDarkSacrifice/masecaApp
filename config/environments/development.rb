@@ -35,6 +35,15 @@ MasecaApp::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+	config.action_mailer.delivery_method = :smtp
+	config.action_mailer.raise_delivery_errors = true
+	ActionMailer::Base.smtp_settings = {
+	  :address  => "smtp.gmail.com",
+	  :port  => 25,
+	  :user_name  => "rosalila.studio@gmail.com",
+	  :password  => "rosalila123",
+	  :authentication  => :login
+	}
+  config.action_mailer.default_url_options = { :host => "www.masecapromo.com" }
   Paperclip.options[:command_path] = "/usr/bin/convert"
 end
