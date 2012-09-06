@@ -28,16 +28,20 @@
     <%= f.text_field :identidad %>
   </div>
   <div class="field">
+    <%= f.label :telefono, "Teléfono" %><br />
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
     <%= f.label :ciudad %><br />
     <%= f.text_field :ciudad %>
   </div>
   <div class="field">
-    <%= f.label :producto, "Presentacion de Producto(libras)" %><br />
-    <%= f.select :producto, {"1" => "1", "2" => "2", "4" => "4", "5" => "5"} %>
+    <%= f.label :codigo, "Código" %><br />
+    <%= f.text_field :codigo %>
   </div>
   <div class="field">
-    <%= f.label :codigo %><br />
-    <%= f.text_field :codigo %>
+    <%= f.label :producto, "Presentación de Producto(libras)" %><br />
+    <%= f.select :producto, {"1" => "1", "2" => "2", "4" => "4", "5" => "5"} %>
   </div>
   <div class="actions">
     <%= f.submit "Participar" %>

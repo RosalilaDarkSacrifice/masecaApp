@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'therubyracer', '0.10.2'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'paperclip'
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
