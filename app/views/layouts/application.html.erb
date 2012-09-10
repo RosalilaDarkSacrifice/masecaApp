@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MasecaApp</title>
+  <title>Maseca Promo</title>
+  <link rel="icon" type="image/gif" href="<%=asset_path("favicon.gif")%>"/>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body style="background-image:url(<%= asset_path("backgroundganadores.jpg")%>);background-repeat:repeat">
-
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash#{name}" %>
-  <% end %>
-
 <%= yield %>
 </body>
 </html>
