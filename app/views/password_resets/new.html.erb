@@ -1,8 +1,12 @@
 <table width="100%" border="0" align="center">
   <tr>
     <td align="center">&nbsp;</td>
-    <td align="center" width="533" height="402" background="<%=asset_path("restablecercontraseniap.png")%>" style="background-repeat:no-repeat;text-align:center">
+    <td align="center" width="524" height="401" background="<%=asset_path("restablecercontraseniap.png")%>" style="background-repeat:no-repeat;text-align:center">
 			<br />
+			<br />
+			<br />
+			<br />
+			<br />	
 			<%= form_tag password_resets_path, :method => :post do %>
 			  <div class="field">
 			    <%= label_tag :email %><br/>
@@ -10,6 +14,7 @@
 			  </div>
 			  <div class="actions"><%= submit_tag "Restablecer contraseña" %></div>
 			<% end %>
+			<span><%= link_to 'Back', admin_path %></span>
     </td>
     <td align="center">&nbsp;</td>
   </tr>

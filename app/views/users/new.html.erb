@@ -1,18 +1,19 @@
+<% if current_user%>
 <%= link_to "Log out", log_out_path %>
 <table width="100%" border="0" align="center" style="position:absolute;top:5%;">
  	<tr>
  	  <td align="right">&nbsp;</td>
  	  <td align="center">
-		  <img width="908" height="185" src="<%=asset_path("MenuCrearAdmin.png")%>"
+		  <img width="849" height="120" src="<%=asset_path("MenuCrearAdmin.png")%>"
         usemap="#Map"/>
 		</td>
  	  <td align="center">&nbsp;</td>
  	</tr>
 </table>
 
-<table width="100%" border="0" align="center" style="position:absolute;top:50%;">
+<table width="100%" border="0" align="center" style="position:absolute;top:40%;">
   <tr>
-    <td align="right"></td>
+    <td align="right" width="200"></td>
     <td align="center" width="579" height="386" background="<%=asset_path("crearadmin.png")%>" style="text-align:center">
 <br/>
 <br/>
@@ -51,9 +52,10 @@
   	</tr>
   </table>
 <map name="Map" id="Map">
-  <area shape="rect" coords="158,26,294,89" href="<%=new_participant_path%>" alt="Ingresar Participante" />
-  <area shape="rect" coords="297,26,431,89" href="<%=ganadors_path%>" alt="Listado de Ganadores" />
-  <area shape="rect" coords="433,28,585,89" href="<%=participants_path%>" alt="Listado de Participantes" />
-  <area shape="rect" coords="588,27,709,91" href="<%=new_ganador_path%>" alt="Generar Ganadores" />
-  <area shape="rect" coords="712,27,880,90" href="<%=new_user_path%>" alt="Crear Administradores" />
+  <area shape="rect" coords="96,27,233,88" href="<%=new_participant_path%>" alt="Ingresar Participante" />
+  <area shape="rect" coords="238,28,370,86" href="<%=ganadors_path%>" alt="Listado de Ganadores" />
+  <area shape="rect" coords="374,25,527,89" href="<%=participants_path%>" alt="Listado de Participantes" />
+  <area shape="rect" coords="530,25,650,89" href="<%=new_ganador_path%>" alt="Generar Ganadores" />
+  <area shape="rect" coords="653,25,826,89" href="<%=new_user_path%>" alt="Crear Administradores" />
 </map>
+<% end %>

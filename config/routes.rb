@@ -6,6 +6,7 @@ MasecaApp::Application.routes.draw do
   get "sign_up" => "users#new", :as => :sign_up
   get "participar" => "participants#new2", :as => :new2_participant
   post "participando" => "participants#create2", :as => :cliente_create
+  match "descargar_csv" => 'participants#export_to_csv', :as => :csv
   root :to => "ganadors#ganadores"
   resources :users
   resources :sessions

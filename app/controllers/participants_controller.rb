@@ -98,4 +98,21 @@ class ParticipantsController < ApplicationController
       end
     end
   end
+
+	def export_to_csv
+		require 'csv'
+    @participants = Participant.all
+
+    csv = CSV.generate(:force_quotes => true) do |line|
+    	line <<["Nombre", "Identidad", "Telefono", "Ciudad", "Codigo", "Producto"]
+			@participants.each do |participant|
+  	    array = []
+		    array += [participant.nombre, participant.identidad, participant.telefono, participant.ciudad, participant.codigo, participant.producto]
+				line << array
+			end
+    end
+    send_data csv,
+      :type => "text/csv; charset=iso-8859-1; header=present",
+      :disposition => "attachment; filename=participantes-#{Time.now.strftime('%d-%m-%y--%H-%M')}.csv"
+	end
 end
