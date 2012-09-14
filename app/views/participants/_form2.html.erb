@@ -1,11 +1,10 @@
 <table width="100%" border="0" align="center" style="position:absolute;top:5%;">
   <tr>
-    <td align="left" width="489" height="359"><img src="<%=asset_path("logoclienteleft.png")%>" alt="Logo Left" /></td>
-    <td align="center" style="background-image:url(<%=asset_path("clienteingreso.png")%>);background-repeat:no-repeat;height:761px">
+    <td align="left" width="300" height="300"><img src="<%=asset_path("logoclienteleft.png")%>" alt="Logo Left" /></td>
+    <td align="center" style="background-image:url(<%=asset_path("clienteingreso.png")%>);background-repeat:no-repeat;height:761px;width:502px">
 <br/>
 <br/>
 <br/>
-<div style="width:502px">
 <span style="position:relative;left:-90px"><%= link_to 'Back', root_url %></span>
 <%= form_for(@participant, :url => cliente_create_path) do |f| %>
   <% if @participant.errors.any? %>
@@ -48,8 +47,7 @@
     <%= f.submit "Participar" %>
   </div>
 <% end %>
-</div>
 		</td>
-    <td align="center" width="120" height="151"><img width="220" height="251" src="<%=asset_path("banner-Derecha.png")%>" alt="Banner"/></td>
+    <td align="center"><img width="120" height="151" src="<%=asset_path("banner-Derecha.png")%>" alt="Banner"/></td>
   </tr>
 </table>
