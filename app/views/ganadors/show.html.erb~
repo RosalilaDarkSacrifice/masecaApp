@@ -28,7 +28,7 @@
 </p>
 
 <p>
-  <b>Producto:</b>
+  <b>Tipo de producto:</b>
   <%= @g.producto %>
 </p>
 
